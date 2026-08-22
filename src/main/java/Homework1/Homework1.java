@@ -3,21 +3,16 @@ package Homework1;
 public class Homework1 {
     public static void main(String[] args) {
         greetings();
-        checkSign();
+        checkSign(25, 3, 3);
         selectColor();
         compareNumbers();
         addOrSubtractAndPrint(2,4, false);
     }
     public static void greetings() {
-        System.out.println("Hello");
-        System.out.println("World");
-        System.out.println("from");
-        System.out.println("Java");
+        System.out.println("Hello\nWorld\nFrom\nJava");
     }
-    public static void checkSign() {
-        int a = 21;
-        int b = 32;
-        int c = 47;
+    public static void checkSign(int a, int b, int c) {
+
         if (a + b + c >= 0) {
             System.out.println("Сумма положительная");
         } else {
