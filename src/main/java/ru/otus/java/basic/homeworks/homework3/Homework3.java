@@ -1,12 +1,12 @@
 package ru.otus.java.basic.homeworks.homework3;
 
-public class homework3 {
+public class Homework3 {
     static void main(String[] args) {
         int[][] arr = {{0, 3, 0, 3},
                 {5, 0, 5, 0}};
         sumOfPositiveElements(arr);
         printSquare(3);
-        int[][] num = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] num = {{1,2,3,5}, {4,5,6,5}, {7,8,9,5},{1,1,1,5}};
         diagonalZero(num);
         int[][] array = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         findMax(array);
@@ -53,7 +53,7 @@ public class homework3 {
                     num[i][j] = 0;
 
                 }
-                if (i + j == 2) {
+                if (i + j == num.length - 1) {
                     num[i][j] = 0;
                 }
                 System.out.print(num[i][j]);
