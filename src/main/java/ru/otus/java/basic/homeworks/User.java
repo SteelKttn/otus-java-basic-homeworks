@@ -1,12 +1,51 @@
 package ru.otus.java.basic.homeworks;
 
 public class User {
-    public String name;
-    public String patronymic;
-    public String surname;
-    public int yearOfBirth;
-    public String email;
+    private String name;
+    private String patronymic;
+    private String surname;
+    private int yearOfBirth;
+    private String email;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public User(String surname, String name, String patronymic, int yearOfBirth, String email) {
         this.patronymic = patronymic;

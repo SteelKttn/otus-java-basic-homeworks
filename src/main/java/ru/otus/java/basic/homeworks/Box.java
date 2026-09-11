@@ -24,13 +24,13 @@ public class Box {
         this.size = size;
     }
 
-    public void openBox() {
+    public void open() {
         isOpen = true;
         System.out.println("коробка открыта");
     }
 
 
-    public void closeBox() {
+    public void close() {
         isOpen = false;
         System.out.println("коробка закрыта");
     }
