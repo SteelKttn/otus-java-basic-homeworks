@@ -36,11 +36,6 @@ public class Box {
     }
 
     public boolean isOpen() {
-        if (isOpen) {
-            System.out.println("Открыта");
-        } else {
-            System.out.println("Закрыта");
-        }
         return isOpen;
     }
 
@@ -57,10 +52,11 @@ public class Box {
             System.out.println("В коробке уже есть предмет");
             return;
         }
-        if (isOpen == true && item == null) {
-            System.out.println("Предмет был помещен");
-            item = newItem;
-        }
+
+        item = newItem;
+        System.out.println("Предмет был помещен");
+
+
     }
 
     public void takeOut() {
@@ -72,10 +68,9 @@ public class Box {
             System.out.println("Предмета нет в коробке");
             return;
         }
-        if (isOpen == true && item != null) {
-            System.out.println("Вы выложили предмет");
-            item = null;
-        }
+
+        System.out.println("Вы выложили предмет");
+        item = null;
 
 
     }
