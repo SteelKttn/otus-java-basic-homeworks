@@ -2,7 +2,8 @@ package ru.otus.java.basic.homeworks;
 
 public class Animal {
     protected String name;
-    protected int speed;
+    protected int runSpeed;
+    protected int swimSpeed;
     protected int endurance;
     protected int runningEnduranceCosts;
     protected int swimmingEnduranceCosts;
@@ -12,8 +13,12 @@ public class Animal {
         return name;
     }
 
-    public int getSpeed() {
-        return speed;
+    public int getRunSpeed() {
+        return runSpeed;
+    }
+
+    public int getSwimSpeed() {
+        return swimSpeed;
     }
 
     public int getEndurance() {
@@ -32,17 +37,22 @@ public class Animal {
         this.name = name;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public void setRunSpeed(int runSpeed) {
+        this.runSpeed = runSpeed;
+    }
+
+    public void setSwimSpeed(int swimSpeed) {
+        this.swimSpeed = swimSpeed;
     }
 
     public void setEndurance(int endurance) {
         this.endurance = endurance;
     }
 
-    public Animal(String name, int speed, int endurance, int swimmingEnduranceCosts) {
+    public Animal(String name, int runSpeed, int swimSpeed, int endurance, int swimmingEnduranceCosts) {
         this.name = name;
-        this.speed = speed;
+        this.runSpeed = runSpeed;
+        this.swimSpeed = swimSpeed;
         this.endurance = endurance;
         this.runningEnduranceCosts = 1;
         this.swimmingEnduranceCosts = swimmingEnduranceCosts;
@@ -53,11 +63,14 @@ public class Animal {
     }
 
 
-    public int run(int distance) {
-        int rTime = distance / speed;
+    public double run(int distance) {
+        double rTime = (double) distance / runSpeed;
         if (distance * runningEnduranceCosts <= endurance) {
             endurance -= distance * runningEnduranceCosts;
             System.out.println("Животное " + name + " пробежало за: " + rTime + " секунд");
+            if (endurance == 0) {
+                tired = true;
+            }
             return rTime;
         } else {
             tired = true;
@@ -67,23 +80,27 @@ public class Animal {
 
     }
 
-    public int swim(int distance) {
-        int sTime = distance / speed;
+    public double swim(int distance) {
+        double sTime = (double) distance / swimSpeed;
         if (distance * swimmingEnduranceCosts <= endurance) {
             endurance -= distance * swimmingEnduranceCosts;
             System.out.println("Животное " + name + " проплыло за: " + sTime + " секунд");
-            return sTime;
-        } else {
-            tired = true;
-            System.out.println("Животное " + name + " устало");
-            return -1;
+            if (endurance == 0) {
+                tired = true;
+            }
+                return sTime;
+            } else {
+                tired = true;
+                System.out.println("Животное " + name + " устало");
+                return -1;
+            }
+        }
+
+
+        public void info () {
+            System.out.println("Имя: " + name + ", скорость бега: " + runSpeed + ", скорость плавания: " + swimSpeed + ", выносливость: " + endurance + ", устало: " + tired);
         }
     }
-
-    public void info() {
-        System.out.println("Имя: " + name + ", скорость: " + speed + ", выносливость: " + endurance + ", устало: " + tired);
-    }
-}
 
 
 
