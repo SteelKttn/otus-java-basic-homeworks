@@ -22,12 +22,14 @@ public class Plate {
         System.out.println("Max Food: " + maxFood + "\nCurrent Food: " + currentFood);
     }
 
-    public void addFood(int food) {
+    public boolean addFood(int food) {
         if (currentFood + food > maxFood) {
             System.out.println("В тарелке недостаточно места");
+            return false;
         } else {
             currentFood = currentFood + food;
             System.out.println("Вы добавили в тарелку: " + food + " Теперь в тарелке: " + currentFood);
+            return true;
         }
     }
     public boolean decreaseFood (int decrease) {
