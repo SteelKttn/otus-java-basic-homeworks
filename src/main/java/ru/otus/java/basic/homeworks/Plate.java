@@ -17,11 +17,31 @@ public class Plate {
         this.maxFood = maxFood;
         this.currentFood = maxFood;
     }
-    public void addFood (int currentFood) {
-        if
 
+    public void info() {
+        System.out.println("Max Food: " + maxFood + "\nCurrent Food: " + currentFood);
+    }
+
+    public void addFood(int food) {
+        if (currentFood + food > maxFood) {
+            System.out.println("В тарелке недостаточно места");
+        } else {
+            currentFood = currentFood + food;
+            System.out.println("Вы добавили в тарелку: " + food + " Теперь в тарелке: " + currentFood);
         }
     }
+    public boolean decreaseFood (int decrease) {
+      if (currentFood - decrease < 0) {
+          System.out.println("Вы не можете уменьшить еду на это значение");
+          return false;
+      } else {
+          currentFood = currentFood - decrease;
+          System.out.println("Теперь в тарелке: " + currentFood);
+          return true;
+      }
+    }
+
+}
 
 
 

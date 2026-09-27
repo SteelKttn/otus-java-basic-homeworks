@@ -3,7 +3,7 @@ package ru.otus.java.basic.homeworks;
 public class Cat {
     private String name;
     private int appetite;
-    private int fullness;
+    private boolean fullness = false;
 
     public String getName() {
         return name;
@@ -12,8 +12,19 @@ public class Cat {
         return appetite;
     }
 
-    public int getFullness() {
+    public boolean getFullness() {
         return fullness;
+    }
+    public Cat (String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+    }
+    public void eat (Plate plate) {
+        if (plate.decreaseFood(appetite)) {
+            fullness = true;
+            System.out.println(name + " сыт");
+
+        }
     }
 }
 
